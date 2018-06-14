@@ -1,0 +1,45 @@
+#container {
+    width: 100%;
+    height: auto;
+    
+}
+
+#gameSection {
+    width: 960px;
+    height: auto;
+    opacity: 100%;
+    margin: auto;
+    text-align: center;;
+}
+
+body {
+    background-image: url(../images/Backgroundimage3.jpg);
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#start {
+    margin-top: 480px;
+}
+
+button {
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Spectral', sans-serif;
+    padding: 10px;
+    margin: 5px;
+    outline: 0;
+}
+
+p {
+    font-family: 'Spectral', sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+#choice0, #choice1, #choice2, #choice3 {
+    display: none;
+}

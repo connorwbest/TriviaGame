@@ -47,13 +47,21 @@ var westWorldQuestion = [{
     }*/
 ]
 
+var gameSong = function(){
+    var theme = $('#audio')[0];
+    theme.play();
+}
+
 var start = function () {
+    gameSong();
     $('#start').fadeOut();
+    
     startQuiz();
 }
 
 function startQuiz() {
     timer = setInterval(nextQ, 30000);
+    
 }
 
 function displayQ() {
@@ -74,6 +82,7 @@ function displayQ() {
 
     $('#gameSection').html(quiz);
 
+
 }
 
 function nextQ() {
@@ -83,29 +92,34 @@ function nextQ() {
 }
 
 $('#start').on('click', function () {
+    
     start();
+
 
     displayQ();
 
-    $('#gameSection').on('click', 'button', function(e){
+    $('#gameSection').on('click', 'button', function guess() {
         userGuess = $(this).data("id");
         westWorldQuestion[count].correctAnswer;
-        if(userGuess == westWorldQuestion[count].correctAnswer){
+        if (userGuess == westWorldQuestion[count].correctAnswer) {
             alert("Correct!");
             correct++;
             clearInterval(timer);
             nextQ();
             setInterval(nextQ, 30000);
             console.log(correct);
+            console.log(count);
         }
-        else if(userGuess != westWorldQuestion[count].correctAnswer){
+        else if (userGuess != westWorldQuestion[count].correctAnswer) {
             alert("Wrong!");
             wrong++;
             clearInterval(timer);
             nextQ();
             setInterval(nextQ, 30000);
             console.log(wrong);
+            console.log(count);
         }
+
     })
 
 
